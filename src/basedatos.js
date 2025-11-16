@@ -86,6 +86,10 @@ if (formulario) {
 }
 
 
+// ----------------------------------------------------------
+// 📥 MOSTRAR MENSAJES RECIENTES EN TABLA
+// ----------------------------------------------------------
+
 const contenedor = document.getElementById("mensajesRecientes");
 
 if (contenedor) {
@@ -95,34 +99,28 @@ if (contenedor) {
     contenedor.innerHTML = "";
 
     const mensajes = [];
-    snapshot.forEach((child) => mensajes.push(child.val()));
+    snapshot.forEach((child) => {
+      const data = child.val();
+      data.id = child.key;
+      mensajes.push(data);
+    });
 
+    // Ordenar por fecha más reciente
     mensajes.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
     mensajes.forEach((data) => {
-      const fecha = new Date(data.fecha).toLocaleString("es-ES", {
-        dateStyle: "short",
-        timeStyle: "short"
-      });
+      const fecha = new Date(data.fecha).toLocaleDateString("es-ES");
 
-      const card = `
-        <div class="border rounded-lg p-4 shadow-sm bg-white">
-          <div class="flex justify-between mb-2">
-            <h3 class="font-bold text-lg">${data.nombre}</h3>
-            <span class="text-sm text-gray-500">${fecha}</span>
-          </div>
-
-          <p class="text-gray-600"><strong>Empresa:</strong> ${data.empresa}</p>
-          <p class="text-gray-600"><strong>Plan:</strong> ${data.plan}</p>
-
-          <div class="mt-2">
-            <p class="text-gray-800 font-semibold">Mensaje:</p>
-            <p class="text-gray-700 whitespace-pre-line">${data.mensaje}</p>
-          </div>
-        </div>
+      const fila = `
+        <tr class="hover:bg-gray-50">
+          <td class="px-4 py-3">${data.nombre}</td>
+          <td class="px-4 py-3">${data.empresa}</td>
+          <td class="px-4 py-3">${data.plan}</td>
+          <td class="px-4 py-3">${fecha}</td>
+        </tr>
       `;
 
-      contenedor.insertAdjacentHTML("beforeend", card);
+      contenedor.insertAdjacentHTML("beforeend", fila);
     });
   });
 }

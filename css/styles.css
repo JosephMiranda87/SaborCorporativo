@@ -29,15 +29,25 @@ Colors:
 /**************************/
 /*     General Styles     */
 /**************************/
+:root {
+    --color-primary: #ff2600;      /* naranja */
+    --color-secondary: #594cda;    /* morado */
+    --color-title: #252c38;        /* gris oscuro */
+    --color-text: #6b747b;         /* gris medio */
+    --color-bg: #f1f9fc;           /* fondo claro */
+    --color-dark: rgba(50,60,70,0.85); /* fondo oscuro header */
+}
+
 
 body,
 p {
-    color: #6b747b;
+    color: var(--color-text);
     font: 400 1rem/1.625rem "Open Sans", sans-serif;
 }
 
+
 h1 {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 3.125rem;
@@ -45,7 +55,7 @@ h1 {
 }
 
 h2 {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 700;
     font-size: 2.125rem;
     line-height: 2.625rem;
@@ -53,7 +63,7 @@ h2 {
 }
 
 h3 {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 700;
     font-size: 1.75rem;
     line-height: 2.25rem;
@@ -61,7 +71,7 @@ h3 {
 }
 
 h4 {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
@@ -69,14 +79,14 @@ h4 {
 }
 
 h5 {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.625rem;
 }
 
 h6 {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.375rem;
@@ -98,7 +108,7 @@ h6 {
 }
 
 .bg-gray {
-    background-color: #f1f9fc;
+    background-color: var(--color-bg);
 }
 
 .container {
@@ -109,9 +119,10 @@ h6 {
 .btn-solid-reg {
     display: inline-block;
     padding: 1.375rem 2.25rem 1.375rem 2.25rem;
-    border: 1px solid #594cda;
+    border: 1px solid var(--color-secondary);
     border-radius: 32px;
-    background-color: #594cda;
+    border: 1px solid var(--color-secondary);
+    background-color: var(--color-secondary);
     color: #ffffff;
     font-weight: 600;
     font-size: 0.875rem;
@@ -121,18 +132,18 @@ h6 {
 }
 
 .btn-solid-reg:hover {
-    border: 1px solid #594cda;
+    border: 1px solid var(--color-secondary);
     background-color: transparent;
-    color: #594cda; /* needs to stay here because of the color property of a tag */
+    color: var(--color-secondary); /* needs to stay here because of the color property of a tag */
     text-decoration: none;
 }
 
 .btn-solid-lg {
     display: inline-block;
     padding: 1.625rem 2.75rem 1.625rem 2.75rem;
-    border: 1px solid #594cda;
     border-radius: 32px;
-    background-color: #594cda;
+    border: 1px solid var(--color-secondary);
+    background-color: var(--color-secondary);
     color: #ffffff;
     font-weight: 600;
     font-size: 0.875rem;
@@ -147,7 +158,7 @@ h6 {
 .btn-solid-lg:hover {
     border: 1px solid #594cda;
     background-color: transparent;
-    color: #594cda; /* needs to stay here because of the color property of a tag */
+    color: var(--color-secondary); /* needs to stay here because of the color property of a tag */
     text-decoration: none;
 }
 
@@ -163,23 +174,23 @@ h6 {
 }
 
 .btn-solid-lg.secondary {
-    border: 1px solid #eb427e;
-    background-color: #eb427e;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 .btn-solid-lg.secondary:hover {
     border: 1px solid #eb427e;
-    background: transparent;
-    color: #eb427e; /* needs to stay here because of the color property of a tag */
+     background-color: transparent;
+    color: var(--color-primary);/* needs to stay here because of the color property of a tag */
 }
 
 .btn-outline-reg {
     display: inline-block;
     padding: 1.375rem 2.25rem 1.375rem 2.25rem;
-    border: 1px solid #252c38;
     border-radius: 32px;
     background-color: transparent;
-    color: #252c38;
+    border: 1px solid var(--color-title);
+    color: var(--color-title);
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 0;
@@ -188,18 +199,18 @@ h6 {
 }
 
 .btn-outline-reg:hover {
-    background-color: #252c38;
-    color: #ffffff;
+      background-color: var(--color-title);
+    color: #fff;
     text-decoration: none;
 }
 
 .btn-outline-lg {
     display: inline-block;
     padding: 1.625rem 2.75rem 1.625rem 2.75rem;
-    border: 1px solid #252c38;
     border-radius: 32px;
     background-color: transparent;
-    color: #252c38;
+    border: 1px solid var(--color-title);
+    color: var(--color-title);
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 0;
@@ -208,18 +219,18 @@ h6 {
 }
 
 .btn-outline-lg:hover {
-    background-color: #252c38;
-    color: #ffffff;
+     background-color: var(--color-title);
+    color: #fff;
     text-decoration: none;
 }
 
 .btn-outline-sm {
     display: inline-block;
     padding: 1rem 1.5rem 1rem 1.5rem;
-    border: 1px solid #252c38;
     border-radius: 32px;
     background-color: transparent;
-    color: #252c38;
+    border: 1px solid var(--color-title);
+    color: var(--color-title);
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 0;
@@ -228,13 +239,13 @@ h6 {
 }
 
 .btn-outline-sm:hover {
-    background-color: #252c38;
-    color: #ffffff;
+      background-color: var(--color-title);
+    color: #fff;
     text-decoration: none;
 }
 
 .list .fas {
-    color: #594cda;
+    background: linear-gradient(#fff, var(--color-bg));
     font-size: 0.75rem;
     line-height: 1.625rem;
 }
@@ -279,10 +290,10 @@ h6 {
     padding-top: 1.125rem;
     padding-bottom: 0.125rem;
     padding-left: 1.8125rem;
-    border: 1px solid #d0d5e2;
     border-radius: 25px;
-    background-color: #ffffff;
-    color: #6b747b;
+    border: 1px solid #d0d5e2;
+    background-color: #fff;
+    color: var(--color-text);
     font-size: 0.875rem;
     line-height: 1.875rem;
     transition: all 0.2s;
@@ -315,10 +326,10 @@ select {
     height: 14rem; /* used instead of html rows to normalize height between Chrome and IE/FF */
     padding-top: 1.5rem;
     padding-left: 1.3125rem;
-    border: 1px solid #d0d5e2;
     border-radius: 4px;
-    background-color: #ffffff;
-    color: #6b747b;
+    border: 1px solid #d0d5e2;
+    background-color: #fff;
+    color: var(--color-text);
     font-size: 0.875rem;
     line-height: 1.5rem;
     transition: all 0.2s;
@@ -327,7 +338,7 @@ select {
 .form-control-input:focus,
 .form-control-select:focus,
 .form-control-textarea:focus {
-    border: 1px solid #a1a1a1;
+    border: 1px solid var(--color-primary);
     outline: none; /* Removes blue border on focus */
 }
 
@@ -416,7 +427,7 @@ input[type="checkbox"] {
 
 .navbar {
     position: relative;
-    background-color: #f1f9fc;
+    background-color: #f76403;
     padding: 0.5rem 1rem;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -501,7 +512,7 @@ input[type="checkbox"] {
 .dropdown.show > a,
 .nav-link:hover,
 .nav-link.active {
-    color: #ff6e84;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -573,7 +584,10 @@ input[type="checkbox"] {
 /*    Header     */
 /*****************/
 .header {
-    background: linear-gradient(rgba(197, 234, 249, 1), rgba(255, 255, 255, 1));
+    padding-top: 8.5rem;
+    padding-bottom: 4rem;
+    background: linear-gradient(var(--color-dark), var(--color-dark)),
+    
 }
 
 /********************/
@@ -792,7 +806,7 @@ input[type="checkbox"] {
 
 .cards-2 .card .card-title {
     margin-bottom: 1rem;
-    color: #eb427e;
+    color: var(--color-primary);
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.875rem;
@@ -805,7 +819,7 @@ input[type="checkbox"] {
 }
 
 .cards-2 .card .value {
-    color: #252c38;
+    color: var(--color-title);
     font-weight: 600;
     font-size: 5rem;
     line-height: 5rem;
@@ -817,6 +831,14 @@ input[type="checkbox"] {
     color: #252c38;
     font-size: 2rem;
     vertical-align: 80%;
+}
+
+.cards-2 .card.popular {
+    border: 2px solid var(--color-primary);
+}
+
+.cards-2 .card.popular .value {
+    color: var(--color-primary);
 }
 
 .cards-2 .card .frequency {
@@ -892,7 +914,7 @@ input[type="checkbox"] {
 }
 
 .footer .fa-stack .fa-stack-1x {
-    color: #252c38;
+    color: var(--color-title);
     transition: all 0.2s ease;
 }
 
