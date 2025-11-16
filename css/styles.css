@@ -783,7 +783,7 @@ input[type="checkbox"] {
 .cards-2 {
     position: relative;
     padding-top: 8rem;
-    background: linear-gradient(rgba(50, 60, 70, 0.9), rgba(50, 60, 70, 0.9)), url("../images/pricing-background.jpg") center center no-repeat;
+    background: linear-gradient(rgba(50, 60, 70, 0.9), rgba(50, 60, 70, 0.9)), url("../images/pricing.jpg") center center no-repeat;
     background-size: cover;
     text-align: center;
 }
